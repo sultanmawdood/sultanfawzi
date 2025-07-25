@@ -1,0 +1,1183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sultan Mawdood Fawzi </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Nunito:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        
+        /* Global Styles */
+        :root {
+            --primary: #1e5631;
+            --primary-light: #2d7d46;
+            --secondary: #ffffff;
+            --accent: #ffd700;
+            --dark: #2e2e2e;
+            --light-bg: #f9f9f9;
+            --gray: #777;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Nunito', sans-serif;
+            color: var(--dark);
+            background-color: var(--secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 4px;
+            background: var(--accent);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 2px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: transparent;
+            color: var(--accent);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--accent);
+            border: 2px solid var(--accent);
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            color: var(--dark);
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background: var(--secondary);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+        }
+
+        .logo i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .language-toggle {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: 'Nunito', sans-serif;
+            font-size: 0.9rem;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            margin-left: 30px;
+        }
+
+        .language-toggle i {
+            margin-left: 5px;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        #home {
+            background: var(--primary);
+            color: var(--secondary);
+            padding: 150px 0 100px;
+        }
+
+        .hero-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-photo {
+            display: flex;
+            justify-content: center;
+        }
+
+        .developer-photo {
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: var(--secondary);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-img {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-content h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tech-item {
+            background: var(--light-bg);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .project-links a {
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .project-links i {
+            margin-right: 5px;
+        }
+
+        .live-link {
+            color: var(--primary);
+        }
+
+        .code-link {
+            color: var(--dark);
+        }
+
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .skills-column h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .skill-item {
+            margin-bottom: 20px;
+        }
+
+        .skill-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background: var(--light-bg);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: var(--primary);
+            border-radius: 5px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            position: relative;
+        }
+
+        .about-img img {
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-img::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--accent);
+            border-radius: 10px;
+            top: 20px;
+            left: 20px;
+            z-index: -1;
+        }
+
+        .about-text h3 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: var(--gray);
+        }
+
+        .personal-info {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .info-item i {
+            color: var(--primary);
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        .interests h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .interest-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .interest-item {
+            background: var(--light-bg);
+            padding: 8px 15px;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+        }
+
+        .interest-item i {
+            color: var(--accent);
+            margin-right: 8px;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-item i {
+            width: 50px;
+            height: 50px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--light-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--primary);
+            color: var(--secondary);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Nunito', sans-serif;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--primary);
+            color: var(--secondary);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background: var(--primary-light);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--secondary);
+            text-align: center;
+            padding: 30px 0;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .footer-links li {
+            margin: 0 15px;
+        }
+
+        .footer-links a {
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .copyright {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-container,
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-photo {
+                order: -1;
+                margin-bottom: 30px;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .about-img {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .personal-info {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 80px);
+                background: var(--secondary);
+                flex-direction: column;
+                align-items: center;
+                padding: 40px 0;
+                transition: all 0.3s ease;
+            }
+
+            .nav-links.active {
+                left: 0;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+            }
+
+            .language-toggle {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .developer-photo {
+                width: 250px;
+                height: 250px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <i class="fas fa-code"></i>
+                    <span>Sultan Fawzi</span>
+                </a>
+                
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <!-- <li><a href="#projects">Projects</a></li> -->
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                   
+                </ul>
+                
+                <button class="mobile-menu-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <div class="hero-container">
+                <div class="hero-content">
+                    <h1>Hi, I'm sultan FAWZI</h1>
+                    <p>A Afganistan Web Developer building digital experiences with local flavor and global standards.</p>
+                    <div class="hero-btns">
+                        <!-- <a href="#projects" class="btn">View My Work</a> -->
+                        <a href="#contact" class="btn btn-outline">Hire Me</a>
+                    </div>
+                </div>
+                <div class="hero-photo">
+                    <img src="mawdood.png" alt="Ali Khan" class="developer-photo">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    
+    <!-- Skills Section -->
+    
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="mawdood.png" alt="Sultan Mawdood Fawzi">
+                </div>
+                
+                <div class="about-text">
+                    <h3>Web Developer from KIGALI Rwanda.</h3>
+                    <p>I'm a passionate web developer with 1+ year of experience creating modern web applications. I specialize in JavaScript frameworks and have worked with clients from all over the world while maintaining my Rwandan roots.</p>
+                    <p>My journey in tech started at COMSATS University Lahore, and since then I've been dedicated to creating digital solutions that solve real problems for people in Rwanda and beyond.</p>
+                    
+                    <div class="personal-info">
+                        <div class="info-item">
+                            <i class="fas fa-user"></i>
+                            <span><strong>Name:</strong> Sultan Mawdood Fawzi</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-envelope"></i>
+                            <span><strong>Email:</strong>sultamawdoodfawzi@gmail.com</span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span><strong>Education:</strong> high-school </span>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-phone"></i>
+                            <span><strong>Phone:</strong> +250738339250</span>
+                        </div>
+                    </div>
+                    
+                    <div class="interests">
+                        <h4>Personal Interests</h4>
+                        <div class="interest-items">
+                            <div class="interest-item">
+                                <i class="fas fa-utensils"></i>
+                                <span>Food Street Visits</span>
+                            </div>
+                            <!-- <div class="interest-item">
+                                <i class="fas fa-book"></i>
+                                <span>Urdu Poetry</span>
+                            </div> -->
+                            <div class="interest-item">
+                                <i class="fas fa-mountain"></i>
+                                <span>KALISIMBI</span>
+                            </div>
+                            <div class="interest-item">
+                                <i class="fas fa-futbol"></i>
+                                <span>Foot-Ball</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<section id="skills" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>My Skills</h2>
+            </div>
+            
+            <div class="skills-container">
+                <div class="skills-column">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>HTML/CSS</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>JavaScript</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>React</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Node.js</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skills-column">
+                    <h3>Professional Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Teamwork (Jamaat Spirit)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Problem Solving</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Adaptability (Like Afganistan Chai)</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%;"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span>Communication</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch</h2>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Location</h4>
+                                <p>KIGALI Rwanda</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>sultanmawdood@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-telegram-plane"></i>
+                            <div>
+                                <h4>Telegram</h4>
+                                <p>+250 738 339 250</p>
+                            </div>
+                        </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <h4>Follow Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/sultanmawdood"><i class="fab fa-github"></i></a>
+                        <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                        <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                        <a href="https://www.instagram.com/sulta_nmawdood92"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your Email</label>
+                            <input type="email" id="email" placeholder="Enter your email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" placeholder="Enter subject">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" placeholder="Enter your message" required></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-code"></i>Sultan Fawzi
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <p class="copyright">© 2025 Mawdood Fawzi. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenuBtn.innerHTML = navLinks.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                }
+            });
+        });
+
+        // Form Submission
+        const contactForm = document.querySelector('.contact-form form');
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            contactForm.reset();
+        });
+
+        // Language Toggle
+        const languageToggle = document.querySelector('.language-toggle');
+        languageToggle.addEventListener('click', () => {
+            // This would be replaced with actual language switching logic
+            if (languageToggle.textContent.includes('English')) {
+                languageToggle.innerHTML = 'اردو <i class="fas fa-globe"></i>';
+                // Here you would load Urdu content
+            } else {
+                languageToggle.innerHTML = 'English <i class="fas fa-globe"></i>';
+                // Here you would load English content
+            }
+        });
+        // Language data
+        const translations = {
+            en: {
+                home: "Home",
+                projects: "Projects",
+                skills: "Skills",
+                about: "About",
+                contact: "Contact",
+                language: "English",
+                heroTitle: "Hi, I'm Ali Khan",
+                heroSubtitle: "A afganistan Web Developer building digital experiences with local flavor and global standards.",
+                viewWork: "View My Work",
+                hireMe: "Hire Me",
+                myProjects: "My Projects",
+                project1Title: "PakCart - E-commerce",
+                project1Desc: "An e-commerce platform specializing in afganistan handicrafts with multi-vendor support.",
+                liveDemo: "Live Demo",
+                viewCode: "View Code",
+                mySkills: "My Skills",
+                techSkills: "Technical Skills",
+                htmlCss: "HTML/CSS",
+                javascript: "JavaScript",
+                react: "React",
+                nodejs: "Node.js",
+                profSkills: "Professional Skills",
+                teamwork: "Teamwork (Jamaat Spirit)",
+                problemSolving: "Problem Solving",
+                adaptability: "Adaptability (Like Afganistani Chai)",
+                communication: "Communication",
+                aboutMe: "About Me",
+                aboutTitle: "Web Developer from Lahore, Pakistan",
+                aboutText1: "I'm a passionate web developer with 5+ years of experience creating modern web applications. I specialize in JavaScript frameworks and have worked with clients from all over the world while maintaining my afganistan roots.",
+                aboutText2: "My journey in tech started at COMSATS University Lahore, and since then I've been dedicated to creating digital solutions that solve real problems for people in Pakistan and beyond.",
+                name: "Name",
+                email: "Email",
+                education: "Education",
+                phone: "Phone",
+                interests: "Personal Interests",
+                foodStreet: "Food Street Visits",
+                poetry: "Urdu Poetry",
+                northern: "Northern Areas",
+                cricket: "Cricket",
+                getInTouch: "Get In Touch",
+                contactInfo: "Contact Information",
+                location: "Location",
+                callWhatsapp: "Call/WhatsApp",
+                followMe: "Follow Me",
+                yourName: "Your Name",
+                yourEmail: "Your Email",
+                subject: "Subject",
+                message: "Message",
+                sendMessage: "Send Message",
+                copyright: "© 2023 Ali Khan. All Rights Reserved."
+            },
+            ur: {
+                home: "ہوم",
+                projects: "پروجیکٹس",
+                skills: "مہارتیں",
+                about: "میرے بارے میں",
+                contact: "رابطہ",
+                language: "اردو",
+                heroTitle: "ہیلو، میں علی خان ہوں",
+                heroSubtitle: "ایک پاکستانی ویب ڈویلپر جو مقامی ذائقے اور عالمی معیارات کے ساتھ ڈیجیٹل تجربات بناتا ہے۔",
+                viewWork: "میرا کام دیکھیں",
+                hireMe: "مجھے ملازمت دیں",
+                myProjects: "میرے پروجیکٹس",
+                project1Title: "پاک کارٹ - ای کامرس",
+                project1Desc: "پاکستانی دستکاری میں مہارت رکھنے والا ایک ای کامرس پلیٹ فارم جس میں ملٹی وینڈر سپورٹ ہے۔",
+                liveDemo: "لائیو ڈیمو",
+                viewCode: "کوڈ دیکھیں",
+                mySkills: "میری مہارتیں",
+                techSkills: "تکنیکی مہارتیں",
+                htmlCss: "ایچ ٹی ایم ایل/سی ایس ایس",
+                javascript: "جاوا اسکرپٹ",
+                react: "ری ایکٹ",
+                nodejs: "نوڈ جے ایس",
+                profSkills: "پیشہ ورانہ مہارتیں",
+                teamwork: "ٹیم ورک (جماعت سپرٹ)",
+                problemSolving: "مسائل حل کرنا",
+                adaptability: "موافقت (پاکستانی چائے کی طرح)",
+                communication: "مواصلات",
+                aboutMe: "میرے بارے میں",
+                aboutTitle: "لاہور، پاکستان سے ویب ڈویلپر",
+                aboutText1: "میں ایک پرجوش ویب ڈویلپر ہوں جسے جدید ویب ایپلی کیشنز بنانے کا 5+ سال کا تجربہ ہے۔ میں جاوا اسکرپٹ فریم ورکس میں مہارت رکھتا ہوں اور اپنی پاکستانی جڑوں کو برقرار رکھتے ہوئے دنیا بھر کے کلائنٹس کے ساتھ کام کر چکا ہوں۔",
+                aboutText2: "ٹیک میں میرا سفر کامسٹس یونیورسٹی لاہور سے شروع ہوا، اور اس وقت سے میں پاکستان اور اس سے باہر کے لوگوں کے لیے حقیقی مسائل حل کرنے والے ڈیجیٹل حل تخلیق کرنے کے لیے وقف ہوں۔",
+                name: "نام",
+                email: "ای میل",
+                education: "تعلیم",
+                phone: "فون",
+                interests: "ذاتی دلچسپیاں",
+                foodStreet: "فوڈ اسٹریٹ کے دورے",
+                poetry: "اردو شاعری",
+                northern: "شمالی علاقے",
+                cricket: "کرکٹ",
+                getInTouch: "رابطہ کریں",
+                contactInfo: "رابطے کی معلومات",
+                location: "مقام",
+                callWhatsapp: "کال/واٹس ایپ",
+                followMe: "مجھے فالو کریں",
+                yourName: "آپ کا نام",
+                yourEmail: "آپ کا ای میل",
+                subject: "موضوع",
+                message: "پیغام",
+                sendMessage: "پیغام بھیجیں",
+                copyright: "© 2023 علی خان۔ تمام حقوق محفوظ ہیں۔"
+            }
+        };
+
+        // Current language
+        let currentLang = 'en';
+        const htmlElement = document.documentElement;
+
+        // Function to switch language
+        function switchLanguage(lang) {
+            currentLang = lang;
+            htmlElement.lang = lang;
+            htmlElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+            
+            // Update all translatable elements
+            document.querySelectorAll('[data-i18n]').forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                element.textContent = translations[lang][key];
+            });
+
+            // Update placeholders
+            document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+                const key = element.getAttribute('data-i18n-placeholder');
+                element.placeholder = translations[lang][key];
+            });
+
+            // Update button text
+            document.querySelector('.language-toggle').innerHTML = 
+                `${translations[lang]['language']} <i class="fas fa-globe"></i>`;
+        }
+
+        // Initialize language
+        switchLanguage(currentLang);
+
+        // Language toggle button
+        document.querySelector('.language-toggle').addEventListener('click', () => {
+            const newLang = currentLang === 'en' ? 'ur' : 'en';
+            switchLanguage(newLang);
+        });
+
+        // The following code is already declared above, so do not redeclare:
+        // const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        // const navLinks = document.querySelector('.nav-links');
+        // const contactForm = document.querySelector('.contact-form form');
+        // Remove duplicate declarations to avoid errors.
+    </script>
+</body>
+</html>
